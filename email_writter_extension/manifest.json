@@ -1,0 +1,34 @@
+{
+    "name": "MailMuse AI",
+    "description": "MailMuse AI is a Gmail companion that reads the entire email thread and, in one click, drafts a polished, context‑aware reply that matches your writing style.",
+    "version": "1.0",
+    "manifest_version": 3,
+  
+    "action": {
+      "default_title": "Email Writer Assistant"
+    },
+  
+    "permissions": ["activeTab", "storage"],
+  
+    "host_permissions": [
+      "https://mailmuse-ai.onrender.com/*",
+      "https://mail.google.com/*"
+    ],
+  
+    "content_scripts": [
+      {
+        "matches": ["https://mail.google.com/*"],
+        "js": ["content.js"],
+        "css": ["content.css"],
+        "run_at": "document_end"
+      }
+    ],
+  
+    "web_accessible_resources": [
+      {
+        "resources": ["icons/*"],
+        "matches": ["https://mail.google.com/*"]
+      }
+    ]
+  }
+  
